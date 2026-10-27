@@ -1,0 +1,72 @@
+# 04：保存历史、结束程序，再由新进程加载
+
+日期：2026-10-27。
+
+状态：代码与步骤已准备；助教离线运行检查与学习者完成情况分别记录。
+
+## 目标
+
+通过一个不调用 API 的小实验，看到内存中的消息怎样写入磁盘，又怎样由新运行的程序读回来。它是理解聊天持久化的基础，尚未把该能力接入 day2.py，也没有集成 Mem0。
+
+## 先预测
+
+save 命令结束后，程序内存结束使用。随后单独运行 load，是否仍能显示“蓝鲸”？依据是什么？
+
+## 操作
+
+在项目中激活虚拟环境，然后逐条执行：
+
+```bash
+python history_demo.py save
+```
+
+这条命令把两条示例消息写入 logs/history_demo.json，然后程序退出。再单独执行：
+
+```bash
+python history_demo.py load
+```
+
+这是一个新进程，会从同一个磁盘文件读取消息并打印。两次运行都不调用模型，不需要 API Key。
+
+然后查看文件本身：
+
+```bash
+cat logs/history_demo.json
+```
+
+## 要读懂的三行代码
+
+```python
+json.dump(history, file, ensure_ascii=False, indent=2)
+history = json.load(file)
+messages = [*history, {"role": "user", "content": "刚才的项目代号是什么？"}]
+```
+
+第一行把 Python 数据转成 JSON 写入文件；第二行从文件恢复成 Python 数据；第三行展开旧消息并加上新问题。第三行完成后，还需要实际调用模型 API，才会生成模型答案。本练习只展示消息组织，不伪造模型回复。
+
+SAMPLE_HISTORY 中第二条 assistant 消息是人工构造的演示数据，不是新一次真实模型调用结果。
+
+## 独立挑战
+
+1. 先运行 `python history_demo.py load --file logs/missing_exercise.json`，观察文件不存在时的提示；不要把这个预期错误视为环境坏了。
+2. 用 `nano history_demo.py` 把示例中的“蓝鲸”改成另一个代号。保存、退出后，使用新的文件名，逐条运行：
+
+```bash
+python history_demo.py save --file logs/history_demo_v2.json
+python history_demo.py load --file logs/history_demo_v2.json
+```
+
+3. 用自己的话说明：修改代码后，如果只加载旧文件，里面的代号会自动变吗？为什么？
+
+save 拒绝覆盖已有文件，避免无意改掉上次练习数据。需要新的实验记录时通过 --file 指定新文件名。保存文件默认位于已被 Git 忽略的 logs 目录，不发布原始聊天数据。
+
+## 与长期记忆的关系
+
+保存整段历史可以帮助恢复某个会话，但历史会变长，需要明确会话归属和上下文预算。长期记忆还需要考虑哪些信息值得保留、怎样检索、更新、删除与隔离用户。两者都要由应用组织，再把选出的内容提供给模型。
+
+## 验证记录
+
+- 助教在本地 Python 3.11 中通过：保存、新进程加载、拒绝覆盖已有文件、明确报告缺失文件。检查没有调用模型，也不替代学习者的独立实践。
+- 学习者实际输出：待提供。
+- 独立修改与解释：待提供。
+- 与真实模型请求的集成：尚未实现，不能因为本练习通过就称已实现跨会话模型记忆。
