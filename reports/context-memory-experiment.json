@@ -1,0 +1,37 @@
+{
+  "record_type": "sanitized_experiment_observation",
+  "observed_on": "2026-10-27",
+  "evidence_sources": ["learner-provided terminal screenshot", "successful request metadata on the learner's server"],
+  "configuration": {"same_project": true, "use_local_context": false, "local_reference_count": 0},
+  "requests": [
+    {
+      "step": "provide_codeword",
+      "request_time_utc": "2026-10-27T12:19:49.567943+00:00",
+      "history_turns": 0,
+      "prompt_tokens": 73,
+      "completion_tokens": 17,
+      "duration_seconds": 0.725,
+      "observed_outcome": "acknowledged the codeword"
+    },
+    {
+      "step": "recall_within_same_process",
+      "request_time_utc": "2026-10-27T12:20:01.463311+00:00",
+      "history_turns": 1,
+      "prompt_tokens": 111,
+      "completion_tokens": 12,
+      "duration_seconds": 0.566,
+      "observed_outcome": "correctly recalled the codeword from conversation context"
+    },
+    {
+      "step": "recall_after_process_restart",
+      "request_time_utc": "2026-10-27T12:20:17.446342+00:00",
+      "history_turns": 0,
+      "prompt_tokens": 67,
+      "completion_tokens": 41,
+      "duration_seconds": 0.939,
+      "observed_outcome": "stated the current conversation did not provide the codeword"
+    }
+  ],
+  "interpretation": "the application forwards in-process history but does not restore it after restarting",
+  "limitations": ["one controlled conversation exercise", "does not test a persistent memory system", "no private connection details, credentials or raw conversation logs are published"]
+}

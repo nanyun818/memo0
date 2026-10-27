@@ -10,7 +10,7 @@
 |---|---|---|
 | 01 环境、配置、检索与 Git | 配置修改、JSON 排错和 Git 提交已验证；概念解释待补充 | [学习记录](docs/learning/001-environment-config.md) |
 | 02 模型 API 与请求响应 | 请求预览和一次真实 DeepSeek 调用已验证；对照练习待完成 | [学习记录](docs/learning/002-model-api.md) |
-| 03 会话上下文与长期记忆 | 讲义与实验步骤已准备，等待实践 | [实验说明](docs/learning/003-context-vs-memory.md) |
+| 03 会话上下文与长期记忆 | 同会话召回与新进程无历史已验证；独立原理解释继续学习 | [实验记录与原理](docs/learning/003-context-vs-memory.md) |
 | 后续模块 | 计划中，尚未完成 | [路线图](docs/ROADMAP.md) |
 
 ## 运行
