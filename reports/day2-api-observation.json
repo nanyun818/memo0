@@ -1,0 +1,20 @@
+{
+  "record_type": "sanitized_observation",
+  "observed_on": "2026-10-27",
+  "evidence_source": "successful request metadata read from the learner's server log",
+  "success_records_observed": 1,
+  "request_time_utc": "2026-10-27T09:52:24.773634+00:00",
+  "model": "deepseek-flash",
+  "reference_count": 1,
+  "duration_seconds": 0.972,
+  "prompt_tokens": 108,
+  "completion_tokens": 37,
+  "history_turns": 0,
+  "use_context": true,
+  "finish_reason": "stop",
+  "limitations": [
+    "one successful request is not a model quality evaluation",
+    "raw question, answer, credentials and server connection details are intentionally excluded",
+    "independent explanation and controlled comparisons still need learner validation"
+  ]
+}
