@@ -1,0 +1,26 @@
+{
+  "assistant_name": "学习助手",
+  "top_k": 1,
+  "knowledge": [
+    {
+      "keywords": ["python", "虚拟环境", "venv"],
+      "answer": "Python 虚拟环境用来隔离项目依赖。激活后，python 指向当前项目的解释器。"
+    },
+    {
+      "keywords": ["langfuse", "评测", "观测"],
+      "answer": "Langfuse 用于记录模型调用过程，并组织数据集、实验和评测结果。"
+    },
+    {
+      "keywords": ["mem0", "记忆"],
+      "answer": "Mem0 可以帮助应用提取、保存和检索长期记忆。"
+    },
+    {
+      "keywords": ["openviking", "上下文", "记忆"],
+      "answer": "OpenViking 统一组织资源、记忆和技能，供 Agent 检索和使用上下文。"
+    },
+    {
+      "keywords": ["harness2"],
+      "answer": "Harness² 研究如何改进模型周围的 Agent 执行系统，模型权重保持固定。"
+    }
+  ]
+}

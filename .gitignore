@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+logs/
+.env
+.env.*
+!.env.example
+secrets/
+*.pem
+*.key
+*_ed25519*
+config.local.json
