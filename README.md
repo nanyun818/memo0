@@ -14,6 +14,7 @@
 | 04 历史保存与新进程加载 | 学习者保存、加载截图已验证；独立修改待完成 | [离线练习](docs/learning/004-history-persistence.md) |
 | 05 命名会话续聊 | 代码与离线验证已准备；学习者真实续聊待验证 | [续聊练习](docs/learning/005-session-resume.md) |
 | 06 需求、检索评测与开发集 | 10 道合成题、评分程序与助教基线已准备；学习者分析待完成 | [原理与实践](docs/learning/006-requirements-evaluation.md) |
+| 07 端到端回答评测 | 5 题批量调用与人工评分表已准备；真实实验与评分待完成 | [实验说明](docs/learning/007-answer-evaluation.md) |
 | 后续模块 | 计划中，尚未完成 | [路线图](docs/ROADMAP.md) |
 
 ## 运行
@@ -42,6 +43,6 @@ python -m unittest -v test_day2 test_session_store
 
 状态区分：计划中 / 已准备 / 已实践 / 已验证 / 已完成。代码由 AI 协助准备、学习者执行与修改；独立理解和独立编码分别验收，不根据文件存在推定已经掌握。
 
-当前学习：[需求、检索评测与开发集](docs/learning/006-requirements-evaluation.md)。
+当前学习：[端到端回答评测](docs/learning/007-answer-evaluation.md)。
 
 模板：[知识块记录模板](docs/templates/knowledge-block.md)。
