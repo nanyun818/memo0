@@ -12,6 +12,7 @@ from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
 from app import load_config, lookup
+from session_store import MAX_TURNS, load_session, save_session, session_path
 
 
 ROOT = Path(__file__).resolve().parent
@@ -152,7 +153,10 @@ def main():
     parser.add_argument("--dry-run", action="store_true", help="只预览，不调用 API")
     parser.add_argument("--no-context", action="store_true", help="不传本地资料，进行对照")
     parser.add_argument("--chat", action="store_true", help="当前进程内的多轮对话，最多 10 轮")
+    parser.add_argument("--session", help="配合 --chat 保存和恢复命名会话，例如 whale；每个会话最多 20 轮")
     args = parser.parse_args()
+    if args.session is not None and not args.chat:
+        parser.error("--session 需要配合 --chat 使用。")
     if args.chat and (args.question is not None or args.dry_run):
         parser.error("--chat 请单独使用，不要同时传单次问题或 --dry-run。")
     if not args.chat and (args.question is None or not args.question.strip()):
@@ -162,10 +166,17 @@ def main():
         if not args.chat:
             run_question(args.question, config, [], args)
             return
+        path = session_path(ROOT, args.session) if args.session is not None else None
+        history = load_session(path) if path is not None else []
+        if path is not None:
+            print(f"会话 {args.session}：已恢复 {len(history) // 2} 轮历史。")
+            print("每次成功回答后保存；同一会话请只在一个终端运行。")
+        if len(history) // 2 >= MAX_TURNS:
+            print("该会话已达到 20 轮上限，请换一个 --session 名称开始新会话。")
+            return
         if not os.environ.get("DEEPSEEK_API_KEY", "").strip():
             raise ValueError("未设置 DEEPSEEK_API_KEY，请先在终端隐藏输入并 export。")
         print("多轮对话：每次提问会调用 API，输入 /exit 退出；本次最多 10 轮。")
-        history = []
         for _ in range(10):
             question = input("\n你：").strip()
             if question == "/exit":
@@ -174,6 +185,16 @@ def main():
                 print("问题不能为空，请重新运行 --chat。")
                 break
             history = run_question(question, config, history, args)
+            if path is not None:
+                try:
+                    save_session(path, history)
+                except (OSError, ValueError):
+                    print("回答已生成，但会话保存失败。本次停止；下次只能恢复此前保存的内容。", file=sys.stderr)
+                    return
+                print(f"[会话 {args.session}：已保存 {len(history) // 2} 轮]")
+                if len(history) // 2 >= MAX_TURNS:
+                    print("该会话达到 20 轮上限。已有记录保留，请换会话名称继续练习。")
+                    break
         else:
             print("已达到本次 10 轮上限，请退出后按需重新开始。")
     except (OSError, ValueError) as error:

@@ -11,7 +11,8 @@
 | 01 环境、配置、检索与 Git | 配置修改、JSON 排错和 Git 提交已验证；概念解释待补充 | [学习记录](docs/learning/001-environment-config.md) |
 | 02 模型 API 与请求响应 | 请求预览和一次真实 DeepSeek 调用已验证；对照练习待完成 | [学习记录](docs/learning/002-model-api.md) |
 | 03 会话上下文与长期记忆 | 对照实验与恢复历史的基本解释已确认；代码实践待继续 | [实验记录与原理](docs/learning/003-context-vs-memory.md) |
-| 04 历史保存与新进程加载 | 离线示例已准备；学习者实践待完成 | [离线练习](docs/learning/004-history-persistence.md) |
+| 04 历史保存与新进程加载 | 学习者保存、加载截图已验证；独立修改待完成 | [离线练习](docs/learning/004-history-persistence.md) |
+| 05 命名会话续聊 | 代码与离线验证已准备；学习者真实续聊待验证 | [续聊练习](docs/learning/005-session-resume.md) |
 | 后续模块 | 计划中，尚未完成 | [路线图](docs/ROADMAP.md) |
 
 ## 运行
@@ -23,7 +24,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 python app.py 'Mem0 是什么？'
 python day2.py '用一个例子解释 Mem0 的用途' --dry-run
-python -m unittest -v test_day2
+python -m unittest -v test_day2 test_session_store
 ```
 
 真实调用需要在当前终端设置 `DEEPSEEK_API_KEY`。隐藏输入方式见 [API 学习记录](docs/learning/002-model-api.md)。
@@ -40,6 +41,6 @@ python -m unittest -v test_day2
 
 状态区分：计划中 / 已准备 / 已实践 / 已验证 / 已完成。代码由 AI 协助准备、学习者执行与修改；独立理解和独立编码分别验收，不根据文件存在推定已经掌握。
 
-开始下一块：[历史保存与新进程加载](docs/learning/004-history-persistence.md)。
+开始下一块：[命名会话续聊](docs/learning/005-session-resume.md)。
 
 模板：[知识块记录模板](docs/templates/knowledge-block.md)。
