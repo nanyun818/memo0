@@ -1,0 +1,159 @@
+{
+  "dataset_version": "synthetic-dev-v1",
+  "top_k": 2,
+  "scope": "retrieval only; synthetic development data; no model API",
+  "answerable_count": 8,
+  "unanswerable_count": 2,
+  "macro_recall": 0.75,
+  "macro_precision": 0.75,
+  "complete_coverage_rate": 0.75,
+  "unanswerable_false_retrieval_rate": 0.5,
+  "cases": [
+    {
+      "id": "q01",
+      "category": "direct",
+      "question": "Python 虚拟环境有什么用？",
+      "relevant_ids": [
+        "python"
+      ],
+      "retrieved_ids": [
+        "python"
+      ],
+      "recall": 1.0,
+      "precision": 1.0,
+      "complete": true,
+      "false_retrieval": null
+    },
+    {
+      "id": "q02",
+      "category": "direct",
+      "question": "Langfuse 用于什么？",
+      "relevant_ids": [
+        "langfuse"
+      ],
+      "retrieved_ids": [
+        "langfuse"
+      ],
+      "recall": 1.0,
+      "precision": 1.0,
+      "complete": true,
+      "false_retrieval": null
+    },
+    {
+      "id": "q03",
+      "category": "direct",
+      "question": "Mem0 的用途是什么？",
+      "relevant_ids": [
+        "mem0"
+      ],
+      "retrieved_ids": [
+        "mem0"
+      ],
+      "recall": 1.0,
+      "precision": 1.0,
+      "complete": true,
+      "false_retrieval": null
+    },
+    {
+      "id": "q04",
+      "category": "direct",
+      "question": "OpenViking 如何组织资源？",
+      "relevant_ids": [
+        "openviking"
+      ],
+      "retrieved_ids": [
+        "openviking"
+      ],
+      "recall": 1.0,
+      "precision": 1.0,
+      "complete": true,
+      "false_retrieval": null
+    },
+    {
+      "id": "q05",
+      "category": "paraphrase",
+      "question": "如何隔离不同项目的依赖？",
+      "relevant_ids": [
+        "python"
+      ],
+      "retrieved_ids": [],
+      "recall": 0.0,
+      "precision": 0.0,
+      "complete": false,
+      "false_retrieval": null
+    },
+    {
+      "id": "q06",
+      "category": "paraphrase",
+      "question": "哪个工具能记录模型调用过程并组织实验结果？",
+      "relevant_ids": [
+        "langfuse"
+      ],
+      "retrieved_ids": [],
+      "recall": 0.0,
+      "precision": 0.0,
+      "complete": false,
+      "false_retrieval": null
+    },
+    {
+      "id": "q07",
+      "category": "multi_source",
+      "question": "记忆",
+      "relevant_ids": [
+        "mem0",
+        "openviking"
+      ],
+      "retrieved_ids": [
+        "mem0",
+        "openviking"
+      ],
+      "recall": 1.0,
+      "precision": 1.0,
+      "complete": true,
+      "false_retrieval": null
+    },
+    {
+      "id": "q08",
+      "category": "multi_source",
+      "question": "Mem0 和 Langfuse 的用途有什么区别？",
+      "relevant_ids": [
+        "mem0",
+        "langfuse"
+      ],
+      "retrieved_ids": [
+        "langfuse",
+        "mem0"
+      ],
+      "recall": 1.0,
+      "precision": 1.0,
+      "complete": true,
+      "false_retrieval": null
+    },
+    {
+      "id": "q09",
+      "category": "unanswerable",
+      "question": "上海明天会下雨吗？",
+      "relevant_ids": [],
+      "retrieved_ids": [],
+      "recall": null,
+      "precision": null,
+      "complete": null,
+      "false_retrieval": false
+    },
+    {
+      "id": "q10",
+      "category": "unanswerable",
+      "question": "Mem0 这个月的收入是多少？",
+      "relevant_ids": [],
+      "retrieved_ids": [
+        "mem0"
+      ],
+      "recall": null,
+      "precision": null,
+      "complete": null,
+      "false_retrieval": true
+    }
+  ],
+  "dataset_sha256": "2be58199a380bc969d14c35944be97f8755a0d6fbd15dc67b0a83d66aaa07635",
+  "retriever_sha256": "641f5e245bbe05ffa36c9f69ece78af7c18d2b81e120c746f5f8ba3ddc86140e"
+}

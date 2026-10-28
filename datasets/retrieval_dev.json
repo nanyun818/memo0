@@ -1,0 +1,22 @@
+{
+  "version": "synthetic-dev-v1",
+  "provenance": "AI-assisted synthetic development cases; no real user data",
+  "documents": [
+    {"id": "python", "keywords": ["python", "虚拟环境", "venv"], "answer": "Python 虚拟环境用来隔离项目依赖。"},
+    {"id": "langfuse", "keywords": ["langfuse", "评测", "观测"], "answer": "Langfuse 用于记录模型调用过程，并组织数据集、实验和评测结果。"},
+    {"id": "mem0", "keywords": ["mem0", "记忆"], "answer": "Mem0 可以帮助应用提取、保存和检索长期记忆。"},
+    {"id": "openviking", "keywords": ["openviking", "上下文", "记忆"], "answer": "OpenViking 统一组织资源、记忆和技能，供 Agent 检索和使用上下文。"}
+  ],
+  "cases": [
+    {"id": "q01", "category": "direct", "question": "Python 虚拟环境有什么用？", "relevant_ids": ["python"]},
+    {"id": "q02", "category": "direct", "question": "Langfuse 用于什么？", "relevant_ids": ["langfuse"]},
+    {"id": "q03", "category": "direct", "question": "Mem0 的用途是什么？", "relevant_ids": ["mem0"]},
+    {"id": "q04", "category": "direct", "question": "OpenViking 如何组织资源？", "relevant_ids": ["openviking"]},
+    {"id": "q05", "category": "paraphrase", "question": "如何隔离不同项目的依赖？", "relevant_ids": ["python"]},
+    {"id": "q06", "category": "paraphrase", "question": "哪个工具能记录模型调用过程并组织实验结果？", "relevant_ids": ["langfuse"]},
+    {"id": "q07", "category": "multi_source", "question": "记忆", "relevant_ids": ["mem0", "openviking"]},
+    {"id": "q08", "category": "multi_source", "question": "Mem0 和 Langfuse 的用途有什么区别？", "relevant_ids": ["mem0", "langfuse"]},
+    {"id": "q09", "category": "unanswerable", "question": "上海明天会下雨吗？", "relevant_ids": []},
+    {"id": "q10", "category": "unanswerable", "question": "Mem0 这个月的收入是多少？", "relevant_ids": []}
+  ]
+}
