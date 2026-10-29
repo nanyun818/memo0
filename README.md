@@ -15,12 +15,12 @@
 | 05 命名会话续聊 | 代码与离线验证已准备；学习者真实续聊待验证 | [续聊练习](docs/learning/005-session-resume.md) |
 | 06 需求、检索评测与开发集 | 10 道合成题、评分程序与助教基线已准备；学习者分析待完成 | [原理与实践](docs/learning/006-requirements-evaluation.md) |
 | 07 端到端回答评测 | 5 题真实请求成功已核验；正式人工评分待完成 | [实验说明](docs/learning/007-answer-evaluation.md) |
-| 08 promptfoo 开源实践 | 两 Prompt 对照与规则断言已准备；真实模型对照待完成 | [开源实验](docs/learning/008-promptfoo.md) |
+| 08 promptfoo 开源实践 | 已安装，7 项断言检查与 2 条 echo 样例通过；真实模型对照待完成 | [开源实验](docs/learning/008-promptfoo.md) |
 | 后续模块 | 计划中，尚未完成 | [路线图](docs/ROADMAP.md) |
 
 ## 运行
 
-要求 Python 3.10+，当前示例仅使用 Python 标准库。
+Python 示例要求 Python 3.10+，使用标准库。promptfoo 子实验另需 Node >=22.22.0，依赖装在 evals/promptfoo。
 
 ```bash
 python3 -m venv .venv
