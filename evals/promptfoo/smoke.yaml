@@ -1,0 +1,24 @@
+description: Offline fixtures only, NOT model quality results
+sharing: false
+prompts:
+  - '{{fixture}}'
+providers:
+  - echo
+defaultTest:
+  assert:
+    - type: is-json
+    - type: javascript
+      value: file://assertions.cjs
+tests:
+  - description: Synthetic supported answer
+    vars:
+      fixture: '{"answer":"Mem0 用于长期记忆。","supported":true,"source_ids":["mem0"]}'
+    metadata:
+      expected_supported: true
+      expected_sources: [mem0]
+  - description: Synthetic insufficient-evidence answer
+    vars:
+      fixture: '{"answer":"资料没有收入信息，无法确定。","supported":false,"source_ids":[]}'
+    metadata:
+      expected_supported: false
+      expected_sources: []

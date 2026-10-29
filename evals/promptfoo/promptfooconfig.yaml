@@ -1,0 +1,23 @@
+description: Five synthetic development questions, two prompts, one DeepSeek model
+sharing: false
+prompts:
+  - id: file://prompts/baseline.txt
+    label: baseline
+  - id: file://prompts/grounded.txt
+    label: grounded
+providers:
+  - id: deepseek:deepseek-flash
+    config:
+      max_tokens: 600
+      maxRetries: 0
+      passthrough:
+        thinking:
+          type: disabled
+tests: file://tests.json
+defaultTest:
+  assert:
+    - type: is-json
+    - type: javascript
+      value: file://assertions.cjs
+evaluateOptions:
+  maxConcurrency: 1

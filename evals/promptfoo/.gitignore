@@ -1,0 +1,7 @@
+node_modules/
+.install-backup/
+results/
+.promptfoo/
+.env
+.env.*
+!.env.example

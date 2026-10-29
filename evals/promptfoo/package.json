@@ -1,0 +1,13 @@
+{
+  "name": "ai-learning-promptfoo-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Five-case prompt comparison for a learning assistant",
+  "scripts": {
+    "test": "node test_assertions.cjs",
+    "smoke": "bash run.sh smoke",
+    "eval": "bash run.sh eval"
+  },
+  "engines": {"node": ">=22.22.0"},
+  "dependencies": {"promptfoo": "0.125.1"}
+}

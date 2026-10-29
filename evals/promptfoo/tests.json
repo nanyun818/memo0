@@ -1,0 +1,82 @@
+[
+  {
+    "description": "q03 direct",
+    "vars": {
+      "question": "Mem0 的用途是什么？",
+      "context_text": "[mem0] Mem0 可以帮助应用提取、保存和检索长期记忆。"
+    },
+    "metadata": {
+      "source_case_id": "q03",
+      "retrieval_top_k": 2,
+      "expected_supported": true,
+      "expected_sources": [
+        "mem0"
+      ],
+      "dataset_sha256": "2be58199a380bc969d14c35944be97f8755a0d6fbd15dc67b0a83d66aaa07635",
+      "provenance": "synthetic development data"
+    }
+  },
+  {
+    "description": "q05 paraphrase",
+    "vars": {
+      "question": "如何隔离不同项目的依赖？",
+      "context_text": "（无资料）"
+    },
+    "metadata": {
+      "source_case_id": "q05",
+      "retrieval_top_k": 2,
+      "expected_supported": false,
+      "expected_sources": [],
+      "dataset_sha256": "2be58199a380bc969d14c35944be97f8755a0d6fbd15dc67b0a83d66aaa07635",
+      "provenance": "synthetic development data"
+    }
+  },
+  {
+    "description": "q08 multi_source",
+    "vars": {
+      "question": "Mem0 和 Langfuse 的用途有什么区别？",
+      "context_text": "[langfuse] Langfuse 用于记录模型调用过程，并组织数据集、实验和评测结果。\n[mem0] Mem0 可以帮助应用提取、保存和检索长期记忆。"
+    },
+    "metadata": {
+      "source_case_id": "q08",
+      "retrieval_top_k": 2,
+      "expected_supported": true,
+      "expected_sources": [
+        "mem0",
+        "langfuse"
+      ],
+      "dataset_sha256": "2be58199a380bc969d14c35944be97f8755a0d6fbd15dc67b0a83d66aaa07635",
+      "provenance": "synthetic development data"
+    }
+  },
+  {
+    "description": "q09 unanswerable",
+    "vars": {
+      "question": "上海明天会下雨吗？",
+      "context_text": "（无资料）"
+    },
+    "metadata": {
+      "source_case_id": "q09",
+      "retrieval_top_k": 2,
+      "expected_supported": false,
+      "expected_sources": [],
+      "dataset_sha256": "2be58199a380bc969d14c35944be97f8755a0d6fbd15dc67b0a83d66aaa07635",
+      "provenance": "synthetic development data"
+    }
+  },
+  {
+    "description": "q10 unanswerable",
+    "vars": {
+      "question": "Mem0 这个月的收入是多少？",
+      "context_text": "[mem0] Mem0 可以帮助应用提取、保存和检索长期记忆。"
+    },
+    "metadata": {
+      "source_case_id": "q10",
+      "retrieval_top_k": 2,
+      "expected_supported": false,
+      "expected_sources": [],
+      "dataset_sha256": "2be58199a380bc969d14c35944be97f8755a0d6fbd15dc67b0a83d66aaa07635",
+      "provenance": "synthetic development data"
+    }
+  }
+]
