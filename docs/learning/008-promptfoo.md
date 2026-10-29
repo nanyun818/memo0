@@ -80,6 +80,6 @@ PASS 是所有配置的断言通过；FAIL 是断言不通过；ERROR 是请求�
 
 ## 状态
 
-2026-10-29：服务器 promptfoo 0.125.1 安装完成；7 项评分函数检查通过，echo 离线 smoke 为 2 通过、0 失败、0 错误。见 [部署验证](../../reports/promptfoo-setup-verification.md)。真实模型对照未运行。
+2026-10-29：服务器 promptfoo 0.125.1 安装完成；7 项评分函数检查通过，echo 离线 smoke 为 2 通过、0 失败、0 错误。见 [部署验证](../../reports/promptfoo-setup-verification.md)。学习者已完成真实对照，baseline 4/5、grounded 5/5，0 执行错误。唯一差别为无答案题的引用约定，未发现该失败答案编造金额。见 [真实结果与读表说明](../../reports/promptfoo-first-real-comparison.md)。
 
 学习者此前 07 的 5 道真实模型请求已由截图及服务器日志核验成功，人工正式评分仍待完成。08 的真实 Prompt 对照需要学习者在持有密钥的终端运行；不把离线样例或断言测试记为模型成绩。

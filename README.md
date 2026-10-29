@@ -15,7 +15,7 @@
 | 05 命名会话续聊 | 代码与离线验证已准备；学习者真实续聊待验证 | [续聊练习](docs/learning/005-session-resume.md) |
 | 06 需求、检索评测与开发集 | 10 道合成题、评分程序与助教基线已准备；学习者分析待完成 | [原理与实践](docs/learning/006-requirements-evaluation.md) |
 | 07 端到端回答评测 | 5 题真实请求成功已核验；正式人工评分待完成 | [实验说明](docs/learning/007-answer-evaluation.md) |
-| 08 promptfoo 开源实践 | 已安装，7 项断言检查与 2 条 echo 样例通过；真实模型对照待完成 | [开源实验](docs/learning/008-promptfoo.md) |
+| 08 promptfoo 开源实践 | 真实对照已核验：普通指令 4/5、强调依据 5/5；读表与错误归因继续学习 | [实测分析](reports/promptfoo-first-real-comparison.md) |
 | 后续模块 | 计划中，尚未完成 | [路线图](docs/ROADMAP.md) |
 
 ## 运行
