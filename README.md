@@ -2,7 +2,7 @@
 
 围绕一个知识与办事助手，逐步学习 Python、模型 API、RAG、长期记忆、Agent、评测、数据分析和产品设计。
 
-当前排期：[2026-10-30 至 11-08 的详细步骤、时间预算与验收](docs/REMAINING_DETAILED_PLAN.md)。
+当前主项目：[用自己的 Agent Desk 学懂 AI 应用](docs/AGENT_DESK_LEARNING.md)。原终端示例与云端评测继续作为练习工具；未来排期按桌面项目学习路线调整。
 
 仓库名是 `memo0`，这是个人学习仓库；Mem0 官方项目另见 [mem0ai/mem0](https://github.com/mem0ai/mem0)。当前代码尚未集成 Mem0。
 
