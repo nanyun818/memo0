@@ -1,0 +1,98 @@
+[
+  {
+    "description": "j01",
+    "vars": {
+      "question": "Mem0 的用途是什么？",
+      "context_text": "[mem0] Mem0 帮助应用提取、保存和检索长期记忆。",
+      "candidate": "{\"answer\": \"Mem0 帮助应用保存和检索长期记忆。\", \"supported\": true, \"source_ids\": [\"mem0\"]}"
+    },
+    "metadata": {
+      "expected_supported": true,
+      "expected_sources": [
+        "mem0"
+      ],
+      "reference_judge_pass": true,
+      "reference_reason": "资料支持该用途",
+      "label_provenance": "AI tutor proposed reference; learner review pending"
+    }
+  },
+  {
+    "description": "j02",
+    "vars": {
+      "question": "Mem0 的用途是什么？",
+      "context_text": "[mem0] Mem0 帮助应用提取、保存和检索长期记忆。",
+      "candidate": "{\"answer\": \"Mem0 是一台家用咖啡机。\", \"supported\": true, \"source_ids\": [\"mem0\"]}"
+    },
+    "metadata": {
+      "expected_supported": true,
+      "expected_sources": [
+        "mem0"
+      ],
+      "reference_judge_pass": false,
+      "reference_reason": "格式和引用正确，内容无依据",
+      "label_provenance": "AI tutor proposed reference; learner review pending"
+    }
+  },
+  {
+    "description": "j03",
+    "vars": {
+      "question": "Mem0 本月收入多少？",
+      "context_text": "[mem0] Mem0 帮助应用提取、保存和检索长期记忆。",
+      "candidate": "{\"answer\": \"资料没有收入信息，无法确定。\", \"supported\": false, \"source_ids\": []}"
+    },
+    "metadata": {
+      "expected_supported": false,
+      "expected_sources": [],
+      "reference_judge_pass": true,
+      "reference_reason": "如实说明未知",
+      "label_provenance": "AI tutor proposed reference; learner review pending"
+    }
+  },
+  {
+    "description": "j04",
+    "vars": {
+      "question": "Mem0 本月收入多少？",
+      "context_text": "[mem0] Mem0 帮助应用提取、保存和检索长期记忆。",
+      "candidate": "{\"answer\": \"资料没有收入信息，但可以确定本月收入为100万元。\", \"supported\": false, \"source_ids\": []}"
+    },
+    "metadata": {
+      "expected_supported": false,
+      "expected_sources": [],
+      "reference_judge_pass": false,
+      "reference_reason": "字段承认未知，正文却编造金额",
+      "label_provenance": "AI tutor proposed reference; learner review pending"
+    }
+  },
+  {
+    "description": "j05",
+    "vars": {
+      "question": "如何隔离不同项目的依赖？",
+      "context_text": "（无资料）",
+      "candidate": "{\"answer\": \"缺少依赖隔离方面的资料，无法根据资料回答。\", \"supported\": false, \"source_ids\": []}"
+    },
+    "metadata": {
+      "expected_supported": false,
+      "expected_sources": [],
+      "reference_judge_pass": true,
+      "reference_reason": "依据一致性通过，任务完成度另测",
+      "label_provenance": "AI tutor proposed reference; learner review pending"
+    }
+  },
+  {
+    "description": "j06",
+    "vars": {
+      "question": "Mem0 的用途是什么？",
+      "context_text": "[mem0] Mem0 帮助应用提取、保存和检索长期记忆。",
+      "candidate": "{\"answer\": \"Mem0 帮助保存长期记忆，而且保证所有回答永远正确。\", \"supported\": true, \"source_ids\": [\"mem0\"]}"
+    },
+    "metadata": {
+      "expected_supported": true,
+      "expected_sources": [
+        "mem0"
+      ],
+      "reference_judge_pass": false,
+      "reference_reason": "正确内容中混入无依据保证",
+      "label_provenance": "AI tutor proposed reference; learner review pending"
+    }
+  }
+]

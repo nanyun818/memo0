@@ -18,5 +18,14 @@ case "${1:-}" in
     echo "10 evaluations: 5 questions x 2 prompts x 1 model. Output: results/$run_id.json"
     exec ./node_modules/.bin/promptfoo eval -c promptfooconfig.yaml --no-share --no-cache --max-concurrency 1 -o "results/$run_id.json" "results/$run_id.html"
     ;;
-  *) echo 'Usage: bash run.sh smoke|eval' >&2; exit 2 ;;
+  judge)
+    if [[ -z "${DEEPSEEK_API_KEY:-}" ]]; then
+      echo 'Missing DEEPSEEK_API_KEY; set it with hidden input and export.' >&2
+      exit 1
+    fi
+    run_id="judge-$(date -u +%Y%m%dT%H%M%SZ)-$$"
+    echo "6 fixed candidate answers, 6 judge requests; no new answer generation."
+    exec ./node_modules/.bin/promptfoo eval -c judge.yaml --no-share --no-cache --max-concurrency 1 -o "results/$run_id.json" "results/$run_id.html"
+    ;;
+  *) echo 'Usage: bash run.sh smoke|eval|judge' >&2; exit 2 ;;
 esac

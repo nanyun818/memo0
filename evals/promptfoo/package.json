@@ -6,7 +6,10 @@
   "scripts": {
     "test": "node test_assertions.cjs",
     "smoke": "bash run.sh smoke",
-    "eval": "bash run.sh eval"
+    "eval": "bash run.sh eval",
+    "judge-preview": "node judge_preview.cjs",
+    "judge": "bash run.sh judge",
+    "judge-report": "python3 read_judge_report.py"
   },
   "engines": {"node": ">=22.22.0"},
   "dependencies": {"promptfoo": "0.125.1"}
