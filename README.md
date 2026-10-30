@@ -2,6 +2,8 @@
 
 围绕一个知识与办事助手，逐步学习 Python、模型 API、RAG、长期记忆、Agent、评测、数据分析和产品设计。
 
+当前排期：[2026-10-30 至 11-08 的详细步骤、时间预算与验收](docs/REMAINING_DETAILED_PLAN.md)。
+
 仓库名是 `memo0`，这是个人学习仓库；Mem0 官方项目另见 [mem0ai/mem0](https://github.com/mem0ai/mem0)。当前代码尚未集成 Mem0。
 
 ## 当前进度
