@@ -19,6 +19,7 @@
 | 07 端到端回答评测 | 5 题真实请求成功已核验；正式人工评分待完成 | [实验说明](docs/learning/007-answer-evaluation.md) |
 | 08 promptfoo 开源实践 | 真实对照已核验：普通指令 4/5、强调依据 5/5；读表与错误归因继续学习 | [实测分析](reports/promptfoo-first-real-comparison.md) |
 | 09 模型裁判与校准样例 | 六条合成答案、裁判标准和中文汇总已准备；真实裁判实验待完成 | [学习与实践](docs/learning/009-model-judge.md) |
+| 10 Agent Desk 点击发送的完整链路 | 本机源码已核对；前后端、上下文、流式响应讲义已准备，学习者追踪待完成 | [第一节源码课](docs/learning/010-agentdesk-send-flow.md) |
 | 后续模块 | 计划中，尚未完成 | [路线图](docs/ROADMAP.md) |
 
 ## 运行
@@ -47,6 +48,6 @@ python -m unittest -v test_day2 test_session_store
 
 状态区分：计划中 / 已准备 / 已实践 / 已验证 / 已完成。代码由 AI 协助准备、学习者执行与修改；独立理解和独立编码分别验收，不根据文件存在推定已经掌握。
 
-当前学习：[模型裁判与校准样例](docs/learning/009-model-judge.md)。另见 [开源评测路线](docs/OPEN_SOURCE_EVAL_PATH.md)，在原两周期限内逐步学习 DeepEval、Ragas、lm-evaluation-harness 与 Inspect AI。
+当前学习：[Agent Desk 点击发送的链路](docs/learning/010-agentdesk-send-flow.md)。模型裁判练习保留，随后结合实际应用继续评测；另见 [开源评测路线](docs/OPEN_SOURCE_EVAL_PATH.md)。
 
 模板：[知识块记录模板](docs/templates/knowledge-block.md)。
