@@ -2,7 +2,7 @@
 
 围绕一个知识与办事助手，逐步学习 Python、模型 API、RAG、长期记忆、Agent、评测、数据分析和产品设计。
 
-当前主项目：[用自己的 Agent Desk 学懂 AI 应用](docs/AGENT_DESK_LEARNING.md)。原终端示例与云端评测继续作为练习工具；未来排期按桌面项目学习路线调整。
+当前顺序（2026-10-31）：[先学七个开源评测项目](docs/EVAL_PROJECTS_PLAN.md)，重点实践promptfoo、DeepEval和Langfuse，再评测既有Agent Desk。[桌面项目能力与源码地图](docs/AGENT_DESK_LEARNING.md)继续作为应用参考。
 
 仓库名是 `memo0`，这是个人学习仓库；Mem0 官方项目另见 [mem0ai/mem0](https://github.com/mem0ai/mem0)。当前代码尚未集成 Mem0。
 
@@ -48,6 +48,6 @@ python -m unittest -v test_day2 test_session_store
 
 状态区分：计划中 / 已准备 / 已实践 / 已验证 / 已完成。代码由 AI 协助准备、学习者执行与修改；独立理解和独立编码分别验收，不根据文件存在推定已经掌握。
 
-当前学习：[Agent Desk 点击发送的链路](docs/learning/010-agentdesk-send-flow.md)。模型裁判练习保留，随后结合实际应用继续评测；另见 [开源评测路线](docs/OPEN_SOURCE_EVAL_PATH.md)。
+当前学习：先完成[09模型裁判与程序规则的区别](docs/learning/009-model-judge.md)，再进入DeepEval。按[2026-10-31评测优先安排](docs/EVAL_PROJECTS_PLAN.md)执行；[Agent Desk发送链路](docs/learning/010-agentdesk-send-flow.md)和[较早的开源评测路线](docs/OPEN_SOURCE_EVAL_PATH.md)保留供查阅。
 
 模板：[知识块记录模板](docs/templates/knowledge-block.md)。
