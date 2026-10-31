@@ -1,6 +1,6 @@
 # DeepEval：第一节
 
-状态（2026-10-31）：服务器独立Python环境已安装deepeval==4.3.2；7项离线检查和实际GEval假裁判流程通过。真实DeepSeek评分尚待运行。本目录不会改动项目原有的Python虚拟环境。
+状态（2026-10-31）：服务器独立Python环境已安装deepeval==4.3.2；7项离线检查和实际GEval假裁判流程通过。j02真实DeepSeek判分已核验：不通过，有效1/1、与助教参考一致1/1。完整六条与独立修改待完成。本目录不会改动项目原有的Python虚拟环境。
 
 本例使用DeepEval自带GEval，不自制一套同名框架。通过DeepEvalBaseLLM适配DeepSeek。先按[中文讲义](../../docs/learning/011-deepeval-first-metric.md)理解LLMTestCase、metric、threshold。
 
@@ -36,6 +36,8 @@ python lesson.py --report
 python -m unittest -v test_adapter
 python lesson.py --self-check
 ```
+
+已有真实报告后，可以执行`python -m unittest -v test_saved_verdicts`，仅检查保存的判分与参考标签是否一致，不调用模型。j02答案不通过，但裁判识别错误的校准检查应通过。详见[第12节](../../docs/learning/012-saved-verdict-regression.md)。
 
 self-check通过真实GEval流程，但假裁判固定返回0；它故意不辨别内容，不能把输出当成DeepSeek判分。单元检查验证schema、二值分数、缺密钥不请求、预算上限、错误不重试、实际GEval连接与参考标签不代替判分。
 

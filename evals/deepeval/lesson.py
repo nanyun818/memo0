@@ -143,7 +143,7 @@ def print_summary(data):
         print(f"{row['id']} | 裁判={'通过' if row['pass'] else '不通过'} | 助教参考={'通过' if row['reference_pass'] else '不通过'}")
         print("理由：", row["reason"])
     print(f"有效判分 {len(valid)}/{data['planned_cases']}；与助教参考一致 {matched}/{len(valid)}；尝试请求 {data['requests_attempted']} 次。")
-    print("参考标签由AI助教提出；六条合成样例不能证明裁判对真实应用普遍可靠。")
+    print(f"参考标签由AI助教提出；本报告只覆盖{data['planned_cases']}条合成样例，不能证明裁判对真实应用普遍可靠。")
 
 
 def main():
