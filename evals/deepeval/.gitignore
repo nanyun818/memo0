@@ -1,0 +1,5 @@
+.venv/
+results/
+.deepeval/
+install.log
+installed-versions.txt

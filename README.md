@@ -18,8 +18,9 @@
 | 06 需求、检索评测与开发集 | 10 道合成题、评分程序与助教基线已准备；学习者分析待完成 | [原理与实践](docs/learning/006-requirements-evaluation.md) |
 | 07 端到端回答评测 | 5 题真实请求成功已核验；正式人工评分待完成 | [实验说明](docs/learning/007-answer-evaluation.md) |
 | 08 promptfoo 开源实践 | 真实对照已核验：普通指令 4/5、强调依据 5/5；读表与错误归因继续学习 | [实测分析](reports/promptfoo-first-real-comparison.md) |
-| 09 模型裁判与校准样例 | 六条合成答案、裁判标准和中文汇总已准备；真实裁判实验待完成 | [学习与实践](docs/learning/009-model-judge.md) |
+| 09 模型裁判与校准样例 | 真实裁判已核验：有效6/6、与助教参考一致6/6；独立标注待完成 | [实测报告](reports/promptfoo-judge-calibration.md) |
 | 10 Agent Desk 点击发送的完整链路 | 本机源码已核对；前后端、上下文、流式响应讲义已准备，学习者追踪待完成 | [第一节源码课](docs/learning/010-agentdesk-send-flow.md) |
+| 11 DeepEval第一项语义指标 | 独立环境deepeval==4.3.2安装、7项离线检查和GEval假裁判流程通过；真实评分待运行 | [Python评测实践](docs/learning/011-deepeval-first-metric.md) |
 | 后续模块 | 计划中，尚未完成 | [路线图](docs/ROADMAP.md) |
 
 ## 运行
@@ -48,6 +49,6 @@ python -m unittest -v test_day2 test_session_store
 
 状态区分：计划中 / 已准备 / 已实践 / 已验证 / 已完成。代码由 AI 协助准备、学习者执行与修改；独立理解和独立编码分别验收，不根据文件存在推定已经掌握。
 
-当前学习：先完成[09模型裁判与程序规则的区别](docs/learning/009-model-judge.md)，再进入DeepEval。按[2026-10-31评测优先安排](docs/EVAL_PROJECTS_PLAN.md)执行；[Agent Desk发送链路](docs/learning/010-agentdesk-send-flow.md)和[较早的开源评测路线](docs/OPEN_SOURCE_EVAL_PATH.md)保留供查阅。
+当前学习：[11 DeepEval第一项语义指标](docs/learning/011-deepeval-first-metric.md)。09真实裁判结果已核验，独立核对保留待完成。按[2026-10-31评测优先安排](docs/EVAL_PROJECTS_PLAN.md)执行；[Agent Desk发送链路](docs/learning/010-agentdesk-send-flow.md)和[较早的开源评测路线](docs/OPEN_SOURCE_EVAL_PATH.md)保留供查阅。
 
 模板：[知识块记录模板](docs/templates/knowledge-block.md)。
