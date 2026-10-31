@@ -60,6 +60,24 @@ DeepEval本身不是另一个大模型。DeepSeekJudge是我们写的服务适�
 
 ## 操作
 
+2026-10-31继续学习时，服务器尚无DeepEval真实报告。为把代码与结果对应起来，先完成一个j02单例，再扩展到全部六条。新增--case参数保持默认六条模式不变；单例模式的请求硬上限按选中用例数设为1。
+
+```bash
+python lesson.py --preview --case j02
+```
+
+这一条只准备“Mem0是咖啡机”的测试对象。代码中的make_test把问题、答案、资料装进LLMTestCase；STEPS是评分要求；make_metric创建自带GEval并显式指定DeepSeek；metric.measure才发出评分请求。strict_mode=True将本节门槛设为1，因此返回0应判不通过。
+
+设置好当前终端的DEEPSEEK_API_KEY后，运行单例：
+
+```bash
+python lesson.py --run --case j02
+```
+
+预先预测：咖啡机说法没有资料支持，应为0分、不通过。只有实际返回后才记录实测结论；如果模型判为1，先检查它的理由和保存的judge_prompt，不修改标签迎合模型。如果出错，报告执行错误，不伪造0分。
+
+--report读取最新报告，此时应只有j02一行；“有效1/1、一致1/1”只覆盖这个案例。之后再用不带--case的--run测试六条。
+
 按私人启动指南连接服务器，进入仓库后：
 
 ```bash

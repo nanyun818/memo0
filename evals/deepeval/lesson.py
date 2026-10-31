@@ -153,14 +153,19 @@ def main():
     mode.add_argument("--self-check", action="store_true")
     mode.add_argument("--run", action="store_true")
     mode.add_argument("--report", action="store_true")
+    parser.add_argument("--case", choices=[f"j{i:02}" for i in range(1, 7)], help="只运行指定的一条教学样例")
     args = parser.parse_args()
     if args.report:
+        if args.case:
+            parser.error("--report读取最新报告，不与--case一起使用")
         files = list((ROOT / "results").glob("deepeval-*.json"))
         if not files:
             parser.exit(1, "还没有真实实验报告，请先执行--run。\n")
         print_summary(json.loads(max(files, key=lambda p: p.stat().st_mtime).read_text(encoding="utf-8")))
         return
     cases = load_cases()
+    if args.case:
+        cases = [case for case in cases if case["description"] == args.case]
     if args.self_check:
         judge = OfflineJudge()
         for case in cases:
@@ -168,7 +173,7 @@ def main():
             metric.measure(make_test(case), _show_indicator=False)
             assert metric.score == 0 and not metric.is_successful()
         assert judge.calls == len(cases)
-        print("离线框架检查通过：6个用例经真实GEval执行，假裁判固定判0；网络请求0次。")
+        print(f"离线框架检查通过：{len(cases)}个用例经真实GEval执行，假裁判固定判0；网络请求0次。")
         return
     if not args.run:
         for case in cases:

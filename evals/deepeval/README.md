@@ -19,6 +19,8 @@ source .venv/bin/activate
 python lesson.py --preview
 ```
 
+初学时先只看j02“咖啡机”样例：`python lesson.py --preview --case j02`。对应的真实评分命令是`python lesson.py --run --case j02`，正常只发1次请求，适配器也限制本轮最多1次尝试。省略--case才对全部6条运行。该单例实验的通过/一致数分母为1，不能称为已完成6条实验。
+
 默认/preview不发模型请求。真实运行要求当前终端已export DEEPSEEK_API_KEY：
 
 ```bash
